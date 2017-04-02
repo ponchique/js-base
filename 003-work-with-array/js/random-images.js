@@ -12,15 +12,17 @@ let images = [
     ]
 // creating array with animals pictures - end -
 
+
 let imgContainer = document.getElementById("img-container");
 
+//returns value of each object property in the images array
 let animalNode = images.map( (animal) => {return '<img src="' + animal.src + '">'})
 
+//push into "img-container" filled "<img>" node
 imgContainer.innerHTML = animalNode.join("");
 
-//checking that array works - start -
-//document.write('<img src="' + animals[0] + '" />')
-//checking that array works - end -
+
+
 
 
 //getting image imageBox elements from HTML - start -
