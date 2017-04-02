@@ -15,11 +15,11 @@ let images = [
 let imgContainer = document.getElementById("img-container");
 
 setInterval(() => {
-    //returns value of each object property in the images array
+    //returns value of each object property in the "images" array, sorts and rips out commas
     let animalNode = images.map( (animal) => {return '<img src="' + animal.src + '">'})
                            .sort( () => { return Math.random() - 0.5 } )
                            .join("")
-    //push into "img-container" filled "<img>" random sorted nodes
+    //places in the "img-container" filled "<img>" nodes
     imgContainer.innerHTML = animalNode;
  }, 2500)
 
