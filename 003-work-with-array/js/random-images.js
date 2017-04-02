@@ -12,49 +12,29 @@ let images = [
     ]
 // creating array with animals pictures - end -
 
-
 let imgContainer = document.getElementById("img-container");
 
-//returns value of each object property in the images array
-let animalNode = images.map( (animal) => {return '<img src="' + animal.src + '">'})
-
-//push into "img-container" filled "<img>" node
-imgContainer.innerHTML = animalNode.join("");
-
-
-
-
-
-//getting image imageBox elements from HTML - start -
-
-//you can check this expression in the browser console 
-var allImageElements = document.getElementsByTagName("img");
-//getting image imageBox elements from HTML - end -
+setInterval(() => {
+    //returns value of each object property in the images array
+    let animalNode = images.map( (animal) => {return '<img src="' + animal.src + '">'})
+                           .sort( () => { return Math.random() - 0.5 } )
+                           .join("")
+    //push into "img-container" filled "<img>" random sorted nodes
+    imgContainer.innerHTML = animalNode;
+ }, 2500)
 
 
-//REORDERING IMAGES 
+//UGLY CODE
 
 // function reorderImg() {
 
-
-//    //creating an array of indexes for img src
 //    var oldCounter = [0];
 
-//    //we can use "for" to be able to add
-//    //something to each img element in array
 //    for (var i = 0; i < images.length; i++) {
-
-//        //on the each iteration we have to add NEW counter.
 //        var counter = Math.floor(Math.random() * images.length);
 
-//        //in this step we have to add different number to the counter
-//        //each time 
 //        for (var y = 0; y < oldCounter.length; y++) {
-
-//            //
 //            var index = oldCounter.indexOf(counter)
-
-//           //if oldCounter array are not empty, we set NEW counter
 //            if (index != -1) {
 //                counter = Math.floor(Math.random() * images.length)
 //            }
