@@ -1,17 +1,22 @@
 
 // creating array with animals pictures - start -
-var images = [
-    'img/bird.png',
-    'img/deer.png',
-    'img/elephant.png',
-    'img/flamingo.png',
-    'img/lion.png',
-    'img/monkey.jpg',
-    'img/panda.png',
-    'img/rhino.jpg',
+let images = [
+    { src: 'img/bird.png'},
+    { src: 'img/deer.png'},
+    { src: 'img/elephant.png'},
+    { src: 'img/flamingo.png'},
+    { src: 'img/lion.png'},
+    { src: 'img/monkey.jpg'},
+    { src: 'img/panda.png'},
+    { src: 'img/rhino.jpg'},
     ]
 // creating array with animals pictures - end -
 
+let imgContainer = document.getElementById("img-container");
+
+let animalNode = images.map( (animal) => {return '<img src="' + animal.src + '">'})
+
+imgContainer.innerHTML = animalNode.join("");
 
 //checking that array works - start -
 //document.write('<img src="' + animals[0] + '" />')
@@ -27,37 +32,37 @@ var allImageElements = document.getElementsByTagName("img");
 
 //REORDERING IMAGES 
 
-function reorderImg() {
-    debugger;
+// function reorderImg() {
 
-   //creating an array of indexes for img src
-   var oldCounter = [0];
 
-   //we can use "for" to be able to add
-   //something to each img element in array
-   for (var i = 0; i < images.length; i++) {
+//    //creating an array of indexes for img src
+//    var oldCounter = [0];
 
-       //on the each iteration we have to add NEW counter.
-       var counter = Math.floor(Math.random() * images.length);
+//    //we can use "for" to be able to add
+//    //something to each img element in array
+//    for (var i = 0; i < images.length; i++) {
 
-       //in this step we have to add different number to the counter
-       //each time 
-       for (var y = 0; y < oldCounter.length; y++) {
+//        //on the each iteration we have to add NEW counter.
+//        var counter = Math.floor(Math.random() * images.length);
 
-           //
-           var index = oldCounter.indexOf(counter)
+//        //in this step we have to add different number to the counter
+//        //each time 
+//        for (var y = 0; y < oldCounter.length; y++) {
 
-          //if oldCounter array are not empty, we set NEW counter
-           if (index != -1) {
-               counter = Math.floor(Math.random() * images.length)
-           }
-       }
-       var currentImageElement = allImageElements[i];
-       currentImageElement.setAttribute('src', images[counter]);
-       oldCounter.push(counter);
-   }
-}
+//            //
+//            var index = oldCounter.indexOf(counter)
 
- setInterval(function () {
-          reorderImg()
-}, 4000)
+//           //if oldCounter array are not empty, we set NEW counter
+//            if (index != -1) {
+//                counter = Math.floor(Math.random() * images.length)
+//            }
+//        }
+//        var currentImageElement = allImageElements[i];
+//        currentImageElement.setAttribute('src', images[counter]);
+//        oldCounter.push(counter);
+//    }
+// }
+
+//  setInterval(function () {
+//           reorderImg()
+// }, 4000)
