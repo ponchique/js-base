@@ -1,2 +1,4 @@
 # js-base
-reordering image
+-------------------------------
+## Work with Array
+003-reordering-image (using array.map())
